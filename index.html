@@ -171,28 +171,31 @@
     </div>
 
     <script>
-    // Ищем наш аудио-плеер
     const audio = document.querySelector('audio');
-    
-    // Проверяем, играло ли уже аудио в этой сессии
+    // Проверяем, играла ли уже музыка в этой сессии
     const hasPlayed = sessionStorage.getItem('anthemPlayed');
 
-    if (!hasPlayed) {
-        // Создаем функцию для запуска музыки
-        const playOnce = () => {
+    if (!hasPlayed && audio) {
+        // Универсальная функция запуска
+        const triggerPlay = () => {
             audio.play().then(() => {
-                // Если удалось запустить, запоминаем это
                 sessionStorage.setItem('anthemPlayed', 'true');
-            }).catch(e => console.log("Браузер пока не разрешает автозапуск"));
-            
-            // Удаляем обработчик, чтобы при втором клике музыка не начиналась заново
-            document.removeEventListener('click', playOnce);
+                // После того как запустили, убираем обработчики, чтобы не срабатывало повторно
+                cleanup();
+            }).catch(e => console.log("Ожидаем действие пользователя..."));
         };
 
-        // Слушаем первый клик пользователя по любой части страницы
-        document.addEventListener('click', playOnce, { once: true });
+        const cleanup = () => {
+            document.removeEventListener('click', triggerPlay);
+            document.removeEventListener('scroll', triggerPlay);
+        };
+
+        // Слушаем и клики, и прокрутку (свайп)
+        document.addEventListener('click', triggerPlay);
+        document.addEventListener('scroll', triggerPlay);
     }
-    </script>
+        </script>
+
     
 </body>
 </html>
