@@ -172,7 +172,6 @@
 
     <script>
     const audio = document.querySelector('audio');
-    // Проверяем, играла ли уже музыка в этой сессии
     const hasPlayed = sessionStorage.getItem('anthemPlayed');
 
     if (!hasPlayed && audio) {
@@ -180,22 +179,21 @@
         const triggerPlay = () => {
             audio.play().then(() => {
                 sessionStorage.setItem('anthemPlayed', 'true');
-                // После того как запустили, убираем обработчики, чтобы не срабатывало повторно
                 cleanup();
-            }).catch(e => console.log("Ожидаем действие пользователя..."));
+            }).catch(e => console.log("Ждем первого касания экрана..."));
         };
 
         const cleanup = () => {
             document.removeEventListener('click', triggerPlay);
-            document.removeEventListener('scroll', triggerPlay);
+            document.removeEventListener('touchstart', triggerPlay);
         };
 
-        // Слушаем и клики, и прокрутку (свайп)
+        // 'click' — для обычного нажатия
+        // 'touchstart' — срабатывает в момент касания пальцем (идеально для свайпа)
         document.addEventListener('click', triggerPlay);
-        document.addEventListener('scroll', triggerPlay);
+        document.addEventListener('touchstart', triggerPlay);
     }
         </script>
 
-    
 </body>
 </html>
