@@ -170,5 +170,29 @@
         </footer>
     </div>
 
+    <script>
+    // Ищем наш аудио-плеер
+    const audio = document.querySelector('audio');
+    
+    // Проверяем, играло ли уже аудио в этой сессии
+    const hasPlayed = sessionStorage.getItem('anthemPlayed');
+
+    if (!hasPlayed) {
+        // Создаем функцию для запуска музыки
+        const playOnce = () => {
+            audio.play().then(() => {
+                // Если удалось запустить, запоминаем это
+                sessionStorage.setItem('anthemPlayed', 'true');
+            }).catch(e => console.log("Браузер пока не разрешает автозапуск"));
+            
+            // Удаляем обработчик, чтобы при втором клике музыка не начиналась заново
+            document.removeEventListener('click', playOnce);
+        };
+
+        // Слушаем первый клик пользователя по любой части страницы
+        document.addEventListener('click', playOnce, { once: true });
+    }
+    </script>
+    
 </body>
 </html>
