@@ -145,11 +145,11 @@
             </div>
         </div>
 
-        <!-- Форма обратной связи (поведенческий фактор) -->
+        <!-- Форма обратной связи -->
         <div class="card">
             <h2>✉️ Заказать звонок</h2>
             <p>Оставьте номер, и я перезвоню в течение 15 минут.</p>
-            <form id="callbackForm" onsubmit="event.preventDefault(); alert('Спасибо! Я перезвоню вам в ближайшее время.');">
+            <form action="send.php" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Ваше имя" required>
                 </div>
@@ -162,7 +162,7 @@
                 <button type="submit" class="btn btn-green" style="width:100%;">Отправить заявку</button>
             </form>
         </div>
-
+        
         <!-- Контакты -->
         <div class="card">
             <h2>📞 Вызов мастера</h2>
