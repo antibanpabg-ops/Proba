@@ -3,211 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мастер Денис — Профессиональный ремонт бытовой техники</title>
-    <!-- Подключение иконок для кнопок отзывов -->
+    <title>Ремонт бытовой техники в Кургане — Мастер Денис, выезд на дом</title>
+    <meta name="description" content="Профессиональный ремонт стиральных машин, холодильников и другой техники в Кургане. Выезд мастера, гарантия, низкие цены. Звоните 8 908 177 06 26.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+    
+    <!-- Микроразметка Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Мастер Денис",
+            "telephone": "+79081770626",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Курган",
+                "addressCountry": "RU"
+            },
+            "priceRange": "от 500₽",
+            "openingHours": "Mo-Su 08:00-22:00",
+            "image": "https://via.placeholder.com/400x300?text=Мастер+Денис"
+        }
+    </script>
+
+    <!-- Яндекс.Метрика (ЗАМЕНИТЕ НОМЕР СЧЁТЧИКА) -->
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+        k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(12345678, "init", { // ← замените 12345678 на свой ID
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0066cc;
-            --accent: #ff9900;
-            --bg: #f4f7f9;
-            --card-bg: #ffffff;
-            --text: #2c3e50;
-            --text-light: #666;
-        }
-
-        /* Невидимый слой для захвата клика */
-        .audio-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: transparent;
-            cursor: pointer;
-            }
-        
-        .vk-btn {
-            background-color: #0077ff !important;
-            color: white !important;
-        }
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px; }
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white; text-align: center; padding: 40px 20px 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        header h1 { font-size: 2rem; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
-        .badge { display: inline-block; background-color: var(--accent); color: #fff; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin-top: 10px; text-transform: uppercase; }
-
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 15px; }
-        .service-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; text-align: center; }
-        .service-item span { font-size: 2rem; display: block; margin-bottom: 8px; }
-        .service-item h3 { font-size: 1.05rem; margin-bottom: 5px; }
-        .service-item p { font-size: 0.85rem; color: var(--text-light); }
-
-        .player-box { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #333; border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 25px; }
-        .play-btn { background: #ffffff; color: #d63384; border: none; padding: 12px 24px; font-size: 1rem; font-weight: bold; border-radius: 30px; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-
-        .lyrics-box { background: #fff; border-left: 4px solid var(--accent); padding: 15px; font-style: italic; white-space: pre-line; border-radius: 0 8px 8px 0; margin-top: 15px; font-size: 0.9rem; text-align: left; max-height: 250px; overflow-y: auto; }
-
-        .cta-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
-        .btn { display: block; text-align: center; padding: 14px; border-radius: 8px; font-weight: bold; text-decoration: none; color: white; font-size: 1rem; }
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-telegram { background-color: #24A1DE; }
-        .btn-vk { background-color: #0077FF; }
-        .btn-max { background-color: #5856D6; }
-        .btn-phone { background-color: var(--primary); }
-
-        /* Стиль для адаптивного списка кнопок социальных сетей */
-        .social-reviews-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #ffffff;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            opacity: 0.95;
-        }
-
-        footer { text-align: center; font-size: 0.85rem; color: var(--text-light); margin-top: 20px; }
+        body { background: #f4f7f9; color: #2c3e50; line-height: 1.6; padding-bottom: 30px; }
+        header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; text-align: center; padding: 30px 20px 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        header h1 { font-size: 2rem; margin-bottom: 5px; }
+        header .sub { font-size: 1.1rem; opacity: 0.9; }
+        .badge { display: inline-block; background: #ff9900; color: #fff; padding: 4px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .card { background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h2 { color: #0066cc; font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 15px; margin-top: 10px; }
+        .service-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; text-align: center; transition: 0.2s; }
+        .service-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .service-item span { font-size: 2.2rem; display: block; margin-bottom: 5px; }
+        .service-item h3 { font-size: 1.05rem; margin-bottom: 3px; }
+        .service-item p { font-size: 0.85rem; color: #666; }
+        .btn { display: inline-block; padding: 14px 30px; border-radius: 8px; font-weight: bold; text-decoration: none; color: #fff; font-size: 1.1rem; text-align: center; border: none; cursor: pointer; transition: 0.2s; }
+        .btn-phone { background: #0066cc; }
+        .btn-phone:hover { background: #004c99; transform: scale(1.02); }
+        .btn-green { background: #28a745; }
+        .btn-green:hover { background: #1e7e34; }
+        .social-reviews-list { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+        .social-link { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 20px; border-radius: 8px; font-weight: bold; text-decoration: none; color: #fff; transition: 0.2s; }
+        .social-link:hover { transform: translateY(-2px); }
+        .btn-telegram { background: #24A1DE; }
+        .btn-vk { background: #0077FF; }
+        .btn-max { background: #5856D6; }
+        .map-container iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; margin-top: 10px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+        .form-group textarea { height: 80px; resize: vertical; }
+        .brands { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .brands span { background: #e9ecef; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; }
+        footer { text-align: center; font-size: 0.85rem; color: #666; margin-top: 20px; }
+        .audio-overlay { position: fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; user-select:none; touch-action:manipulation; }
+        @media (max-width: 600px) { header h1 { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
+    <!-- Невидимый слой для автозапуска аудио (по клику) -->
     <div class="audio-overlay" id="audioOverlay"></div>
-    <!-- дальше идет ваш header и остальной код -->
-        
 
     <header>
-        <h1>🏠 г.Курган</h1>
-        <h1>📞 8 908 177 06 26</h1>
-        <h1>🔧 Мастер Денис</h1>
-        <p>Качественный ремонт бытовой техники любой сложности с гарантией</p>
-        <span class="badge">Выезд на дом от 500₽ • Быстро и надёжно</span>
+        <h1>🏠 Ремонт бытовой техники в Кургане</h1>
+        <p class="sub">📞 <strong>8 908 177 06 26</strong> — Мастер Денис</p>
+        <p>Выезд на дом, гарантия, доступные цены</p>
+        <span class="badge">🚀 Работаем в день звонка</span>
     </header>
 
     <div class="container">
-
-        <!-- Гимн Мастера -->
-        <div class="card" style="text-align: center;">
+        <!-- Аудио (по желанию, можно оставить) -->
+        <div class="card" style="text-align:center;">
             <h2>🎵 Гимн Мастера Дениса</h2>
-            <p style="margin-bottom: 10px;">Слушать трек:</p>
-            <audio controls style="width: 100%; max-width: 400px;">
-                <source src="song.mp3" type="audio/mpeg">
+            <audio id="anthemAudio" src="./song.mp3" controls style="width:100%; max-width:400px;">
                 Ваш браузер не поддерживает аудио.
             </audio>
         </div>
 
-        <!-- Услуги -->
+        <!-- О мастере (текст + ключи) -->
+        <div class="card">
+            <h2>👨‍🔧 О мастере</h2>
+            <p><strong>Меня зовут Денис</strong>, я профессионально занимаюсь ремонтом бытовой техники в Кургане более 10 лет. Работаю во всех районах города — от Центрального до Заозёрного, выезжаю в день обращения.</p>
+            <p>Специализируюсь на <strong>ремонте стиральных машин</strong> (Indesit, Bosch, LG, Samsung), <strong>холодильников</strong> (Atlant, Liebherr, Samsung) и <strong>микроволновых печей</strong> любых брендов. Все работы даю с <strong>гарантией до 1 года</strong>. Цены фиксированные, без скрытых доплат.</p>
+            <div class="brands">
+                <span>Indesit</span><span>Bosch</span><span>LG</span><span>Samsung</span>
+                <span>Atlant</span><span>Liebherr</span><span>Whirlpool</span><span>Electrolux</span>
+            </div>
+        </div>
+
+        <!-- Услуги (с якорями) -->
         <div class="card">
             <h2>🛠 Услуги по ремонту</h2>
             <div class="services-grid">
-                <div class="service-item">
+                <div class="service-item" id="stiralnye">
                     <span>🧺</span>
                     <h3>Стиральные машины</h3>
-                    <p>Замена помп, подшипников, ремонт плат</p>
+                    <p>Замена ТЭНа, подшипников, сливных насосов</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="holodilniki">
                     <span>❄️</span>
                     <h3>Холодильники</h3>
-                    <p>Заправка фреоном, замена компрессоров</p>
+                    <p>Заправка фреоном, ремонт компрессора, термостата</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="mikrovolnovki">
                     <span>⚡</span>
                     <h3>Микроволновки</h3>
-                    <p>Устранение искрения, замена Магнитрона</p>
+                    <p>Ремонт магнетрона, высоковольтной цепи</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="melkaya">
                     <span>☕</span>
                     <h3>Мелкая техника</h3>
-                    <p>Кофемашины, пылесосы, чайники</p>
+                    <p>Электрочайники, утюги, блендеры, мультиварки</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Карта (гео-привязка) -->
+        <div class="card">
+            <h2>📍 Где мы находимся</h2>
+            <p>Работаем по всему Кургану. Офис (приём техники) — Центральный район, ул. Советская, 123 (примерно).</p>
+            <div class="map-container">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=65.3400,55.4480&z=12&mode=search&text=Курган%20ул.%20Советская" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Форма обратной связи (поведенческий фактор) -->
+        <div class="card">
+            <h2>✉️ Заказать звонок</h2>
+            <p>Оставьте номер, и я перезвоню в течение 15 минут.</p>
+            <form id="callbackForm" onsubmit="event.preventDefault(); alert('Спасибо! Я перезвоню вам в ближайшее время.');">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Телефон" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Опишите проблему (необязательно)"></textarea>
+                </div>
+                <button type="submit" class="btn btn-green" style="width:100%;">Отправить заявку</button>
+            </form>
         </div>
 
         <!-- Контакты -->
         <div class="card">
             <h2>📞 Вызов мастера</h2>
-            <p>Нужен ремонт? Напишите или позвоните прямо сейчас!</p>
-            <div class="cta-buttons">
-                <a href="tel:+79081770626" class="btn btn-phone">📞 Позвонить мастеру</a>
+            <div class="cta-buttons" style="display:flex; flex-direction:column; gap:10px;">
+                <a href="tel:+79081770626" class="btn btn-phone">📞 Позвонить прямо сейчас</a>
             </div>
         </div>
 
-                <!-- НОВЫЙ БЛОК: ЧАТ С ОТЗЫВАМИ -->
-        <div class="card" style="text-align: center;">
+        <!-- Отзывы и соцсети -->
+        <div class="card" style="text-align:center;">
             <h2>💬 Чат и отзывы клиентов</h2>
-            <p style="font-size: 0.95rem; color: var(--text-light);">Читайте отзывы и делитесь впечатлениями в удобном мессенджере:</p>
-            
             <div class="social-reviews-list">
-                <!-- Исправлены классы: social-link и btn-telegram -->
-                <a href="tg://join?invite=J2yMHd2WveM2YzEy" class="social-link btn-telegram" target="_blank">
+                <a href="tg://join?invite=J2yMHd2WveM2YzEy" class="social-link btn-telegram">
                     <i class="fa-brands fa-telegram"></i> Отзывы в Telegram
                 </a>
-                
-                <a href="https://vk.me/join/t/eQdFaXjFmcZCnibyFg6RhJzPR4tGMvkzY=" class="social-link btn-vk" target="_blank">
+                <a href="https://vk.me/join/t/eQdFaXjFmcZCnibyFg6RhJzPR4tGMvkzY=" class="social-link btn-vk">
                     <i class="fa-brands fa-vk"></i> Отзывы ВКонтакте
                 </a>
-                
-                <a href="https://max.ru/join/UbbfVmQlSXodE3fO2aapFJHiGSTvEUJKbaKzYflQds4" class="social-link btn-max" target="_blank">
+                <a href="https://max.ru/join/UbbfVmQlSXodE3fO2aapFJHiGSTvEUJKbaKzYflQds4" class="social-link btn-max">
                     <i class="fa-solid fa-comments"></i> Отзывы в MAX
                 </a>
             </div>
         </div>
 
-        <footer>
-            © 2026 Мастер Денис • Ремонт бытовой техники
-        </footer>
+        <footer>© 2026 Мастер Денис • Ремонт бытовой техники в Кургане • 8 908 177 06 26</footer>
     </div>
 
     <script>
-    const audio = document.querySelector('audio');
-    const hasPlayed = sessionStorage.getItem('anthemPlayed');
+        // Автозапуск аудио при первом клике (без навязчивости)
+        const audio = document.querySelector('audio');
+        const overlay = document.getElementById('audioOverlay');
+        const hasPlayed = sessionStorage.getItem('anthemPlayed');
 
-    if (!hasPlayed && audio) {
-        // Универсальная функция запуска
-        const triggerPlay = () => {
-            audio.play().then(() => {
-                sessionStorage.setItem('anthemPlayed', 'true');
-                cleanup();
-            }).catch(e => console.log("Ждем первого касания экрана..."));
-        };
-
-        const cleanup = () => {
-            document.removeEventListener('click', triggerPlay);
-            document.removeEventListener('touchstart', triggerPlay);
-        };
-
-        // 'click' — для обычного нажатия
-        // 'touchstart' — срабатывает в момент касания пальцем (идеально для свайпа)
-        document.addEventListener('click', triggerPlay);
-        document.addEventListener('touchstart', triggerPlay);
-    }
-        </script>
-
+        if (hasPlayed || !audio) {
+            if (overlay) overlay.style.display = 'none';
+        } else {
+            const startMusic = () => {
+                audio.play().then(() => {
+                    sessionStorage.setItem('anthemPlayed', 'true');
+                    if (overlay) overlay.style.display = 'none';
+                }).catch(() => {});
+            };
+            if (overlay) {
+                overlay.addEventListener('click', startMusic);
+                // Также пробуем запустить при касании
+                overlay.addEventListener('touchstart', startMusic);
+            }
+        }
+    </script>
 </body>
 </html>
