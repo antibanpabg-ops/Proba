@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -211,6 +211,33 @@
                 overlay.addEventListener('touchstart', startMusic);
             }
         }
+    </script>
+    <script>
+    // Отправка формы в Telegram через Make.com
+        document.getElementById('callbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = this.querySelector('[name="name"]').value;
+            const phone = this.querySelector('[name="phone"]').value;
+            const message = this.querySelector('[name="message"]').value;
+
+            // Ваш URL вебхука из Make.com
+            const webhookURL = "https://hook.us2.make.com/jbs3hoefj3opkpcag8ahsyvnaccaf06t";
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, message })
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = 'thanks.html';
+                } else {
+                    alert('Ошибка отправки, попробуйте позвонить по телефону.');
+                }
+            })
+            .catch(() => alert('Ошибка сети, свяжитесь по телефону.'));
+        });
     </script>
 </body>
 </html>
