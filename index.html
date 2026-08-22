@@ -7,7 +7,6 @@
     <meta name="description" content="Профессиональный ремонт стиральных машин, холодильников и другой техники в Кургане. Выезд мастера, гарантия, низкие цены. Звоните 8 908 177 06 26.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
     
-    <!-- Микроразметка Schema.org -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -25,19 +24,7 @@
         }
     </script>
 
-    <!-- Яндекс.Метрика (ЗАМЕНИТЕ НОМЕР СЧЁТЧИКА) -->
-    <script>
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];
-        k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        ym(6017567530, "init", { // ← замените 12345678 на свой ID
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ВАШ_ТОКЕН_CLOUDFLARE"}'></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -67,7 +54,6 @@
         .btn-telegram { background: #24A1DE; }
         .btn-vk { background: #0077FF; }
         .btn-max { background: #5856D6; }
-        .map-container iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; margin-top: 10px; }
         .form-group { margin-bottom: 15px; }
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
         .form-group textarea { height: 80px; resize: vertical; }
@@ -79,7 +65,6 @@
     </style>
 </head>
 <body>
-    <!-- Невидимый слой для автозапуска аудио -->
     <div class="audio-overlay" id="audioOverlay"></div>
 
     <header>
@@ -90,95 +75,53 @@
     </header>
 
     <div class="container">
-        <!-- Аудио -->
         <div class="card" style="text-align:center;">
             <h2>🎵 Гимн Мастера Дениса</h2>
-            <audio id="anthemAudio" src="./song.mp3" controls style="width:100%; max-width:400px;">
-                Ваш браузер не поддерживает аудио.
-            </audio>
+            <audio id="anthemAudio" src="./song.mp3" controls style="width:100%; max-width:400px;"></audio>
         </div>
 
-        <!-- О мастере -->
         <div class="card">
             <h2>👨‍🔧 О мастере</h2>
-            <p><strong>Меня зовут Денис</strong>, я профессионально занимаюсь ремонтом бытовой техники в Кургане более 2,5 лет. Работаю во всех районах города — от Центрального до Заозёрного, выезжаю в день обращения.</p>
-            <p>Специализируюсь на <strong>ремонте стиральных машин</strong> (Indesit, Bosch, LG, Samsung), <strong>холодильников</strong> (Atlant, Liebherr, Samsung) и <strong>микроволновых печей</strong> любых брендов. Все работы даю с <strong>гарантией до 1 года</strong>. Цены фиксированные, без скрытых доплат.</p>
+            <p><strong>Меня зовут Денис</strong>, я профессионально занимаюсь ремонтом бытовой техники в Кургане более 2,5 лет. Работаю во всех районах города, выезжаю в день обращения.</p>
+            <p>Специализируюсь на <strong>ремонте стиральных машин</strong>, <strong>холодильников</strong> и <strong>микроволновых печей</strong>. Гарантия до 1 года.</p>
             <div class="brands">
                 <span>Indesit</span><span>Bosch</span><span>LG</span><span>Samsung</span>
                 <span>Atlant</span><span>Liebherr</span><span>Whirlpool</span><span>Electrolux</span>
             </div>
         </div>
 
-        <!-- Услуги -->
-        <div class="card">
-            <h2>🛠 Услуги по ремонту</h2>
-            <div class="services-grid">
-                <div class="service-item" id="stiralnye">
-                    <span>🧺</span>
-                    <h3>Стиральные машины</h3>
-                    <p>Замена ТЭНа, подшипников, сливных насосов</p>
-                </div>
-                <div class="service-item" id="holodilniki">
-                    <span>❄️</span>
-                    <h3>Холодильники</h3>
-                    <p>Заправка фреоном, ремонт компрессора, термостата</p>
-                </div>
-                <div class="service-item" id="mikrovolnovki">
-                    <span>⚡</span>
-                    <h3>Микроволновки</h3>
-                    <p>Ремонт магнетрона, высоковольтной цепи</p>
-                </div>
-                <div class="service-item" id="melkaya">
-                    <span>☕</span>
-                    <h3>Мелкая техника</h3>
-                    <p>Электрочайники, утюги, блендеры, мультиварки</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Карта -->
-        <div class="card">
-            <h2>📍 Где мы находимся</h2>
-            <p>Работаем по всему Кургану. Офис (приём техники) — Центральный район, ул. Советская, 123 (примерно).</p>
-            <div class="map-container">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=65.3400,55.4480&z=12&mode=search&text=Курган%20ул.%20Советская" allowfullscreen loading="lazy"></iframe>
-            </div>
-        </div>
-
-        <!-- Форма обратной связи -->
         <div class="card">
             <h2>✉️ Заказать звонок</h2>
-            <p>Оставьте номер, и я перезвоню в течение 15 минут.</p>
-            <form id="callbackForm">
+            <p>Укажите только ваш номер телефона. <strong>Пожалуйста, не пишите адрес или ФИО</strong> — мастер перезвонит в ближайшее время и лично всё уточнит.</p>
+            
+            <form id="callbackForm" style="margin-top:15px;">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input 
+                        type="tel" 
+                        name="phone" 
+                        placeholder="Ваш номер телефона (только цифры)" 
+                        required 
+                        inputmode="tel"
+                        oninput="this.value = this.value.replace(/[^0-9+ ()-]/g, '');"
+                    >
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Телефон" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Опишите проблему (необязательно)"></textarea>
+                    <textarea name="message" placeholder="Что сломалось? (например: не морозит холодильник)"></textarea>
                 </div>
                 
-                <!-- НОВЫЙ БЛОК: Согласие на обработку ПД -->
-                <div class="form-group" style="font-size: 0.85rem; color: #666; display: flex; gap: 10px; align-items: flex-start;">
-                    <input type="checkbox" id="consent" name="consent" required style="width: auto; margin-top: 4px; cursor: pointer;">
-                    <label for="consent" style="cursor: pointer;">Я даю согласие на обработку моих персональных данных в соответствии с <a href="privacy.html" target="_blank" style="color: #0066cc;">Политикой конфиденциальности</a>.</label>
-                </div>
+                <button type="submit" class="btn btn-green" style="width:100%;">Жду звонка</button>
 
-                <button type="submit" class="btn btn-green" style="width:100%;">Отправить заявку</button>
+                <p style="font-size: 0.75rem; color: #888; margin-top: 10px; text-align: center;">
+                    Отправляя форму, вы подтверждаете, что не указываете свои персональные данные (адрес, ФИО и т.д.). Вы несете ответственность за содержание своего сообщения.
+                </p>
             </form>
         </div>
-        
-        <!-- Контакты -->
+
         <div class="card">
             <h2>📞 Вызов мастера</h2>
-            <div class="cta-buttons" style="display:flex; flex-direction:column; gap:10px;">
-                <a href="tel:+79081770626" class="btn btn-phone">📞 Позвонить прямо сейчас</a>
-            </div>
+            <a href="tel:+79081770626" class="btn btn-phone" style="width:100%;">📞 Позвонить прямо сейчас</a>
         </div>
 
-        <!-- Отзывы и соцсети -->
         <div class="card" style="text-align:center;">
             <h2>💬 Чат и отзывы клиентов</h2>
             <div class="social-reviews-list">
@@ -198,61 +141,33 @@
     </div>
 
     <script>
-        // Автозапуск аудио
         const audio = document.querySelector('audio');
         const overlay = document.getElementById('audioOverlay');
-        const hasPlayed = sessionStorage.getItem('anthemPlayed');
-
-        if (hasPlayed || !audio) {
-            if (overlay) overlay.style.display = 'none';
-        } else {
-            const startMusic = () => {
-                audio.play().then(() => {
-                    sessionStorage.setItem('anthemPlayed', 'true');
-                    if (overlay) overlay.style.display = 'none';
-                }).catch(() => {});
-            };
-            if (overlay) {
-                overlay.addEventListener('click', startMusic);
-                overlay.addEventListener('touchstart', startMusic);
-            }
+        const startMusic = () => { audio.play(); if (overlay) overlay.style.display = 'none'; };
+        if (overlay) {
+            overlay.addEventListener('click', startMusic);
+            overlay.addEventListener('touchstart', startMusic);
         }
     </script>
     
     <script>
-        // ОБНОВЛЕННЫЙ СКРИПТ ОТПРАВКИ ФОРМЫ (С ПРОВЕРКОЙ СОГЛАСИЯ)
         document.getElementById('callbackForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
-            const name = this.querySelector('[name="name"]').value;
             const phone = this.querySelector('[name="phone"]').value;
             const message = this.querySelector('[name="message"]').value;
 
-            // Проверка галочки согласия
-            const consent = this.querySelector('#consent');
-            if (consent && !consent.checked) {
-                alert('Пожалуйста, подтвердите согласие на обработку данных.');
-                return;
-            }
+            const makeWebhookURL = "https://hook.us2.make.com/33lko95sb24axoaoo9jsixvxcnnptt93";
 
-            // ВАЖНО: Замените эту ссылку на URL вашего созданного Cloudflare Worker
-            // Если вы решили использовать отправку напрямую через JS (Вариант 1), 
-            // замените этот блок fetch на код из предыдущего сообщения.
-            const workerURL = "https://telegram-proxy.ваш-поддомен.workers.dev";
-
-            fetch(workerURL, {
+            fetch(makeWebhookURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, phone, message })
+                body: JSON.stringify({ phone: phone, message: message })
             })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = 'thanks.html';
-                } else {
-                    alert('Ошибка отправки, попробуйте позвонить по телефону.');
-                }
+            .then(() => {
+                alert('Заявка принята! Мастер перезвонит в ближайшее время.');
+                this.reset();
             })
-            .catch(() => alert('Ошибка сети, свяжитесь по телефону.'));
+            .catch(() => alert('Ошибка сети, свяжитесь напрямую по телефону.'));
         });
     </script>
 </body>
